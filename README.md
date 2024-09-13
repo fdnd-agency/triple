@@ -9,7 +9,7 @@
 
 ## Resources
 
-[Backlog](...)
+[Backlog](https://github.com/orgs/fdnd-agency/projects/34/)
 
 [Design](...)
 
