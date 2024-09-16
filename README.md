@@ -1,5 +1,5 @@
 # Triple
-...
+[Alles over Triple is te vinden in de PDF waar dit naartoe linkt! (Blijkbaar kan markdown geen pdf preview tonen :'( ))](/files/Triple-about.pdf)
 
 ## Mediahuis
 
@@ -13,6 +13,8 @@ Triple is verantwoordelijk voor het ontwikkelen en onderhouden van de web apps e
 
 **Het verhaal van RadioGuide**
 Stel je voor: een wereld zonder radiogids. Je zou nooit meer weten wanneer je favoriete DJ aan het draaien is of wat er die avond op de radio staat. Gelukkig hebben we de radiogids, een digitale gids die ons vertelt wat er allemaal te beluisteren valt.
+
+![Design Fimga](/files//design.png)
 
 **De uitdaging**
 Jij en je team zijn de ontwikkelaars van RadioGuide, een gloednieuwe radiogids-app. Jullie missie? Een app creëren die niet alleen informatie geeft over programma’s en DJ’s, maar die ook een persoonlijke ervaring biedt voor elke luisteraar.
@@ -33,6 +35,6 @@ Jij en je team zijn de ontwikkelaars van RadioGuide, een gloednieuwe radiogids-a
 
 [Backlog](https://github.com/orgs/fdnd-agency/projects/34/)
 
-[Design](...)
+[Design](/files/Mediahuis%20Gids%20Design.fig)
 
-[API](...)
+[API](/data/README.md)
