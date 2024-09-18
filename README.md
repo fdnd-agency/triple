@@ -1,5 +1,10 @@
 # Triple
-[Alles over Triple is te vinden in de PDF waar dit naartoe linkt! (Blijkbaar kan markdown geen pdf preview tonen :'( ))](/files/Triple-about.pdf)
+
+Een Full-service digital agency gevestigd in Alkmaar.
+
+In de vorige eeuw begonnen vier pioniers aan een missie om het digitale landschap te veroveren. Dit was lang voordat er browsers op telefoons waren. Triple bracht videostreaming zelfs naar mobiele telefoons ver voordat deze zelfs als smartphones werden beschouwd. Sindsdien is Triple een digitale partner voor veel A-list merken. VodafoneZiggo, citizenM, NLZIET, Talpa, ANWB en Max Verstappen behoren tot onze geliefde klanten. Bij Triple leveren we holistische concepten, waaronder; strategie, ontwikkeling, ontwerp, data & insights en clouddiensten.
+
+[Meer informatie over Triple](/files/Triple-about.pdf)
 
 ## Mediahuis
 
