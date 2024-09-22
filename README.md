@@ -36,7 +36,7 @@ Jij en je team zijn de ontwikkelaars van RadioGuide, een gloednieuwe radiogids-a
 
 ## Resources
 
-[Backlog](https://github.com/orgs/fdnd-agency/projects/34/)
+<!-- [Backlog](https://github.com/orgs/fdnd-agency/projects/34/) -->
 
 [Design](/files/Mediahuis%20Gids%20Design.fig)
 
