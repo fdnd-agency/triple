@@ -14,25 +14,29 @@ Triple is verantwoordelijk voor het ontwikkelen en onderhouden van de web apps e
 
 ## Design challenge
 
-**Het verhaal van RadioGuide**
+### Het verhaal van RadioGuide
+
 Stel je voor: een wereld zonder radiogids. Je zou nooit meer weten wanneer je favoriete DJ aan het draaien is of wat er die avond op de radio staat. Gelukkig hebben we de radiogids, een digitale gids die ons vertelt wat er allemaal te beluisteren valt.
 
 ![Design Fimga](/files//design.png)
 
-**De uitdaging**
+### De uitdaging
+
 Jij en je team zijn de ontwikkelaars van RadioGuide, een gloednieuwe radiogids-app. Jullie missie? Een app creëren die niet alleen informatie geeft over programma’s en DJ’s, maar die ook een persoonlijke ervaring biedt voor elke luisteraar.
 
-- Een overzicht van wat er die dag uitgezonden word op een van de radio zenders van Mediahuis
-  - Veronica, SLAM!, 100%NL, Sublime en Sunlight
+#### Een overzicht van wat er die dag uitgezonden wordt op een van de radio zenders van Mediahuis
+
+- Veronica, SLAM!, 100%NL, Sublime en Sunlight
     
-- Features
-  - Overzicht van de verschillende programma’s voor een zender
-  - Switchen van dagen
-  - Switchen van radiostations
-  - Klikken op de cards voor meer informatie
-  - Tijdsindicatie die meeloopt met de huidige tijd
-  - Weekoverzicht
-  - Overzicht van alle zenders per dag
+#### Features
+
+- Overzicht van de verschillende programma’s voor een zender
+- Switchen van dagen
+- Switchen van radiostations
+- Klikken op de cards voor meer informatie
+- Tijdsindicatie die meeloopt met de huidige tijd
+- Weekoverzicht
+- Overzicht van alle zenders per dag
 
 ## Resources
 
