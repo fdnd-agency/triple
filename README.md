@@ -40,4 +40,6 @@ Jij en je team zijn de ontwikkelaars van RadioGuide, een gloednieuwe radiogids-a
 
 [Design](/files/Mediahuis%20Gids%20Design.fig)
 
+## Resources Semester 2
+
 [API](/data/README.md)
