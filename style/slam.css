@@ -1,0 +1,49 @@
+/**
+ * Slam design tokens
+ */
+
+:root,
+body {
+  --font-primary: lato, sans-serif;
+  --font-secondary: lato, sans-serif;
+  --font-hackney: hackney, sans-serif;
+  --brand-footer: #000;
+  --brand-primary: #000;
+  --brand-secondary: #e50069;
+  --brand-secondary-active: #e50069;
+  --text-on-primary: #fff;
+  --text-on-footer: #fff;
+  --text-on-secondary: #fff;
+  --neutral-min: #111;
+  --neutral-100: #222;
+  --neutral-200: #333;
+  --neutral-300: #ededed;
+  --neutral-400: #5d5d5d;
+  --neutral-500: #5d5d5d;
+  --neutral-600: #bababa;
+  --neutral-700: #8b8b8b;
+  --neutral-800: #5d5d5d;
+  --neutral-900: #fff;
+  --neutral-max: #fff;
+  --error: #dd5e56;
+  --success: #a6cb72;
+  --link-background: transparent;
+  --hero-gradient: linear-gradient(#01156400, #000c, #000);
+  --tabbar-color: #e50069;
+  --header-icons-color: #fff;
+}
+
+@font-face {
+  font-family: lato;
+  src: url("/fonts/lato.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: hackney;
+  src: url("/fonts/hackney.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: lato;
+  src: url("/fonts/lato.ttf") format("ttf");
+}
