@@ -69,11 +69,4 @@
     width: 170px;
     font-weight: bold;
   }
-
-  /* span {
-        display: inline-block;
-        width: 100%;
-        height: 1px;
-        background-color: black;
-    } */
 </style>

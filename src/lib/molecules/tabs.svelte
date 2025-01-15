@@ -11,7 +11,6 @@
   <hr />
 </nav>
 
-<!-- tab css -->
 <style>
   .tabs__list {
     display: flex;

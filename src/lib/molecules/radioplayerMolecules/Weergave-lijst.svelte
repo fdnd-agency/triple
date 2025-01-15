@@ -1,7 +1,7 @@
 <script>
-  import Estafette from "../../atoms/radioplayerAtoms/estafette.svelte";
-  import Weergavecard from "../../atoms/radioplayerAtoms/weergave-songcard.svelte";
-  import Volgendelijst from "../../atoms/radioplayerAtoms/volgende-lijst.svelte";
+  import Estafette from "$lib/atoms/radioplayerAtoms/estafette.svelte";
+  import Weergavecard from "$lib/atoms/radioplayerAtoms/weergave-songcard.svelte";
+  import Volgendelijst from "$lib/atoms/radioplayerAtoms/volgende-lijst.svelte";
 </script>
 
 <div class="audio__container">

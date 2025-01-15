@@ -48,7 +48,7 @@
   font-style: normal;
 }
 
-/* Dit zijn op dit moment de fonts die we gebruiken in het ontwerp, als je meer wilt aanmaken moet je een nieuwe @font-face maken */
+/* Currently these are the only fonts in the design */
 
 /* Global settings */
 * {
@@ -134,26 +134,10 @@ article {
   container-type: initial;
 }
 
-/* Voorbeeld CSS media gebruik */
-
-/* .card-profile {
-    background-color: red;
-    margin: 1rem;
-
-    @media (min-width: var(--media-md)) {
-        background-color: blue;
-    }
-
-    @media (min-width: var(--media-lg)) {
-        background-color: pink;
-    }
-} */
-
 /* other elements */
 li {
   list-style-type: none;
 }
-
 
 body {
   background-color: #FAFAFA

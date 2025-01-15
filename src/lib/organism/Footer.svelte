@@ -1,6 +1,5 @@
 <script>
-  // ENHANCED IMAGES DIE IN WORD GELADEN VANUIT EEN MAP DIE IK HEB AANGEMAAKT IN DE ASSETS FOLDER
-  //MET DE SOCIALS ICONS VAN MEDIAHUIS. DIT IS GEIMPORTEERD ALS VARIABLES
+  // Get all the images from assests that are required for thie component
   import Veronica from "$lib/assets/Veronica.png?enhanced";
   import Facebook from "$lib/assets/Facebook.png?enhanced";
   import X from "$lib/assets/X.png?enhanced";
@@ -8,10 +7,9 @@
   import IG from "$lib/assets/Instagram.png?enhanced";
 </script>
 
-<!-- DIT ZIJN ENHANCED IMAGES HIERVOOR GEBRUIK IK DE ENHANCED TAG EN DE IMAGES WORDEN INGELADEN.-->
-<!--  DOOR DE IMPORT/VARIABLE NAAM MEE TE GEVEN BINNEN DE SRC EN TUSSEN DE "{}"" CURLY BRACES -->
 <footer class="footer">
   <div class="footer__grid">
+    <!-- I use enhanced images to show the logo for performance increase -->
     <enhanced:img
       src={Veronica}
       class="footer__veronica"
@@ -93,11 +91,6 @@
 </footer>
 
 <style>
-  /***********************************
-                                   *
-            FOOTER STYLING         *
-                                   *
-***********************************/
   li {
     cursor: pointer;
   }
@@ -159,16 +152,6 @@
     }
   }
 
-  .footer__icons img {
-    width: 1rem;
-    height: 1rem;
-    @media only screen and (min-width: 960px) {
-      grid-area: header-footer;
-      width: 13rem;
-      font-size: 2.2rem;
-    }
-  }
-
   .footer__socials {
     display: flex;
     flex-direction: column;
@@ -208,7 +191,8 @@
     background-color: var(--tertairy);
   }
 
-  .footer__icons img {
+  picture img,
+  picture source {
     width: 1rem;
     height: 1rem;
   }

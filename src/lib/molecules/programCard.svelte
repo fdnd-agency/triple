@@ -47,7 +47,6 @@
     if (popoverButton && popover) {
       popoverButton.addEventListener("click", (e) => {
         if (document.startViewTransition) {
-          console.log("startViewTransition open");
           document.startViewTransition(togglePopover);
         } else {
           togglePopover();
@@ -58,7 +57,6 @@
       // close button
       closePopoverButton.addEventListener("click", (e) => {
         if (document.startViewTransition) {
-          console.log("startViewTransition close");
           document.startViewTransition(togglePopover);
         } else {
           togglePopover();

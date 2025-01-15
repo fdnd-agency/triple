@@ -1,5 +1,5 @@
 <script>
-  import Chat from "../../molecules/radioplayerMolecules/chat.svelte";
+  import Chat from "$lib/molecules/radioplayerMolecules/chat.svelte";
 </script>
 
 <ul class="audio__chat">

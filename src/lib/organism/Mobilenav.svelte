@@ -1,6 +1,6 @@
 <script>
-  import Slideinmenu from "../molecules/Slideinmenu.svelte";
-  import Tabmenu from "../molecules/tabmenu.svelte";
+  import Slideinmenu from "$lib/molecules/Slideinmenu.svelte";
+  import Tabmenu from "$lib/molecules/tabmenu.svelte";
 </script>
 
 <nav>

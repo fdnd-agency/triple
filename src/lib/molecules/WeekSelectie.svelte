@@ -51,12 +51,12 @@
         />
       </svg>
     </button>
-    <!-- Koppel het variabele carousel aan de ol -->
+    <!-- Connect the variable carousel to the ol -->
     <ol bind:this={carousel}>
-      <!-- Ga de daysinmonth array af en geef de uitkomsten weer als dayofweek en day -->
+      <!-- Go trough daysinmonth array and recieve the output as dayofweek and day -->
       {#each daysInMonth as { dayOfWeek, day }}
         <li bind:this={dayOfWeekButton} class="day-of-week-button">
-          <!-- als de dag gelijk is aan de nummer van de huidige dag krijgt de button de active class -->
+          <!-- if the dag is the same as the current day, get an active class -->
           <a
             data-sveltekit-reload
             href="/?datum={year}-{month + 1}-{day}"
@@ -64,9 +64,9 @@
             class:new-week={dayOfWeek === "zondag"}
             class="day-button"
           >
-            <!-- Weergeef de dag in een string-->
+            <!-- Show the day of the week as a string -->
             <span>{dayOfWeek}</span>
-            <!-- Weergeef de dag als een nummer -->
+            <!-- Show the day as a nummer -->
             <span>{day}</span>
           </a>
         </li>
@@ -113,7 +113,6 @@
     display: flex;
     width: 80%;
     overflow-x: auto; /* Verberg inhoud die buiten het zicht valt */
-    /* margin-left: calc(2rem + 105px); */
     @media screen and (min-width: 960px) {
       font-size: 1.5em;
     }
@@ -131,7 +130,7 @@
 
   button.navigation-buttons {
     position: relative;
-    z-index: 2; /* Zorg dat de knoppen boven de blur-elementen staan */
+    z-index: 2;
   }
 
   .day-carousel::before,
@@ -140,27 +139,27 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 3em; /* Breedte van de blur aan beide kanten */
-    pointer-events: none; /* Laat klikken door naar de knoppen */
-    z-index: 1; /* Plaats de blur onder de knoppen */
+    width: 3em;
+    pointer-events: none;
+    z-index: 1;
   }
 
   .day-carousel::before {
-    left: 1em; /* Plaats de blur naast de eerste knop */
+    left: 1em; /* Add blur next to the first button */
     background: linear-gradient(
       to right,
       rgba(255, 255, 255, 1),
       rgba(255, 255, 255, 0)
-    ); /* Linker blur */
+    ); /* Left blur */
   }
 
   .day-carousel::after {
-    right: 1em; /* Plaats de blur naast de laatste knop */
+    right: 1em; /* Add blur next to the last button */
     background: linear-gradient(
       to left,
       rgba(255, 255, 255, 1),
       rgba(255, 255, 255, 0)
-    ); /* Rechter blur */
+    ); /* Right blur */
   }
 
   a,

@@ -1,7 +1,7 @@
 <h2 class="chat__header">live chat</h2>
 <span class="audio__line"></span>
 <ul class="chat__berichten" aria-live="polite">
-  <!-- Hier zullen berichten dynamisch gegenereerd worden -->
+  <!-- Here the messages will be generated dynamic -->
   <li class="chat__tijd">18:40</li>
   <li class="chat__user">user1:</li>
   <li class="chat__verzonden-bericht">Speel many man van 50 cent</li>
@@ -76,7 +76,6 @@
   <li class="chat__verzonden-bericht">@User21 Deze man is blind</li>
 </ul>
 <form id="chat___form" class="chat__form" aria-label="Send a message">
-  <!-- <label for="chat__input" class="chat__label-hidden">Schrijf een bericht</label> -->
   <input id="chat__input" placeholder="Schrijf een bericht" type="text" />
   <button type="submit" class="chat__knop">
     <span class="chat__verzend">Verzenden</span>
@@ -121,59 +120,24 @@
     font-weight: bold;
   }
 
-  /* primary blue */
-  .chat__user:nth-child(5) {
-    color: var(--primary-color);
-  }
-
-  .chat__user:nth-child(11) {
-    color: var(--primary-color);
-  }
-
-  .chat__user:nth-child(11) {
-    color: var(--primary-color);
-  }
-
-  .chat__user:nth-child(20) {
-    color: var(--primary-color);
-  }
-
-  .chat__user:nth-child(29) {
-    color: var(--primary-color);
-  }
-  .chat__user:nth-child(38) {
-    color: var(--primary-color);
-  }
-  .chat__user:nth-child(47) {
-    color: var(--primary-color);
-  }
-
+  /* Primary Color */
+  .chat__user:nth-child(5),
+  .chat__user:nth-child(11),
+  .chat__user:nth-child(11),
+  .chat__user:nth-child(20),
+  .chat__user:nth-child(29),
+  .chat__user:nth-child(38),
+  .chat__user:nth-child(47),
   .chat__user:nth-child(56) {
     color: var(--primary-color);
   }
 
-  /* secondary color */
-
-  .chat__user:nth-child(8) {
-    color: var(--secondary-color);
-  }
-
-  .chat__user:nth-child(17) {
-    color: var(--secondary-color);
-  }
-
-  .chat__user:nth-child(26) {
-    color: var(--secondary-color);
-  }
-
-  .chat__user:nth-child(35) {
-    color: var(--secondary-color);
-  }
-
-  .chat__user:nth-child(44) {
-    color: var(--secondary-color);
-  }
-
+  /* Secondary Color */
+  .chat__user:nth-child(8),
+  .chat__user:nth-child(17),
+  .chat__user:nth-child(26),
+  .chat__user:nth-child(35),
+  .chat__user:nth-child(44),
   .chat__user:nth-child(53) {
     color: var(--secondary-color);
   }
@@ -181,7 +145,6 @@
   button {
     border: 1px solid black;
     border-radius: 5px;
-    /* width: 300px; */
   }
 
   form {

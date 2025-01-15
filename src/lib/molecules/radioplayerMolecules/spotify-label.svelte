@@ -1,5 +1,5 @@
 <script>
-        import Spotify from '../../atoms/radioplayerAtoms/spotify-button.svelte';
+  import Spotify from "$lib/atoms/radioplayerAtoms/spotify-button.svelte";
 </script>
 
 <Spotify />

@@ -1,20 +1,20 @@
 <script>
   import { onMount } from "svelte";
-  // Variabele om de audio file te gebruiken
+  // Variable to use the audio file
   let audio;
-  // Variable om bij te houden of de audio file wordt afgespeeld
+  // Variable to keep track if the audio file is being played
   let isPlaying = false;
 
-  // Functie om de audio te stoppen
-  // heeft een boolean van true dat de audio wordt afgespeeld
+  // Function to play the audio
+  // Has an boolean value of true so the audio will be played
   function playAudio() {
     if (audio) {
       audio.play();
       isPlaying = true;
     }
   }
-  // Functie om de audio te stoppen
-  // heeft een boolean van false dat de audio wordt gestopt
+  // Function to stop the audio
+  // Has an boolean value of false so the audio will be played
   function stopAudio() {
     if (audio) {
       audio.pause();
@@ -22,9 +22,9 @@
     }
   }
 
-  // Functie die wordt uitgevoerd wanneer de component wordt gemount
+  // Function that is being called when the component is being `OnMount`
   onMount(() => {
-    // hier geef ik de audio met een specifiek audiobestand mee
+    // Here I send the audio file
     audio = new Audio("/muziek/Amy Winehouse - Back To Black.mp3");
   });
 </script>
@@ -105,10 +105,10 @@
               />
             </a>
           </li>
-          <!-- de if statement om te kijken of de audio wordt afgespeeld -->
+          <!-- If statement if the audio is being played -->
           {#if isPlaying}
             <li>
-              <!-- de pause button word weergeven en gebruikt als de play button actief word en met prevent default wordt er voor gezorgt dat de gebruiker niet naar een andere pagina wordt toegeleid -->
+              <!-- The pause button will be visible if clicked and will ignore page reload because of the prevent default -->
               <a
                 href="#"
                 aria-label="Pause"
@@ -123,10 +123,10 @@
                 />
               </a>
             </li>
-            <!-- anders wordt de play button weergegeven -->
+            <!-- If not playing, play button will show -->
           {:else}
             <li>
-              <!-- de play button word weergeven en gebruikt als de pause button actief word en met prevent default wordt er voor gezorgt dat de gebruiker niet naar een andere pagina wordt toegeleid -->
+              <!-- The play button will be visible if clicked and will ignore page reload because of the prevent default -->
               <a
                 href="#"
                 aria-label="Play"
@@ -141,7 +141,7 @@
                 />
               </a>
             </li>
-            <!-- de if statement sluit -->
+            <!-- Closing of the if statement -->
           {/if}
           <li>
             <a href="/" aria-label="whats app" class="audio__whats-app">
@@ -322,7 +322,6 @@
     @media only screen and (min-width: 982px) {
       align-items: unset;
       margin-left: unset;
-      /* margin-bottom: 180px; */
     }
   }
 
@@ -472,7 +471,7 @@
     border-bottom: solid 0.2rem var(--secondary-color);
   }
 
-  /* Volgende */
+  /* Next */
   .audio__volgende {
     @media only screen and (min-width: 320px) and (max-width: 980px) {
       display: none;

@@ -2,13 +2,13 @@
   import Radiotab from "$lib/molecules/radioplayerMolecules/radio-tab-link.svelte";
   import Musicimage from "$lib/molecules/radioplayerMolecules/music-image.svelte";
   import Casting from "$lib/atoms/radioplayerAtoms/cast-button.svelte";
-  import Kijklive from "../atoms/radioplayerAtoms/kijklive-button.svelte";
-  import PlayButton from "../atoms/radioplayerAtoms/play-button.svelte";
-  import Livechat from "../atoms/radioplayerAtoms/livechat-button.svelte";
+  import Kijklive from "$lib/atoms/radioplayerAtoms/kijklive-button.svelte";
+  import PlayButton from "$lib/atoms/radioplayerAtoms/play-button.svelte";
+  import Livechat from "$lib/atoms/radioplayerAtoms/livechat-button.svelte";
   import Fullprogressbar from "$lib/molecules/radioplayerMolecules/full-progressbar.svelte";
   import Volumecontrole from "$lib/molecules/radioplayerMolecules/volume-controle.svelte";
   import Spotifylabel from "$lib/molecules/radioplayerMolecules/spotify-label.svelte";
-  import Weergavelijst from "../molecules/radioplayerMolecules/Weergave-lijst.svelte";
+  import Weergavelijst from "$lib/molecules/radioplayerMolecules/Weergave-lijst.svelte";
 </script>
 
 <article class="radioplayer audio">
@@ -48,12 +48,6 @@
     bottom: -132px;
     background-color: var(--light);
     border-radius: 5px;
-
-    @media only screen and (min-width: 320px) and (max-width: 480px) {
-      /* bottom: -86px;
-      width: calc(100% - 1%); */
-      /* margin-left: 1em; */
-    }
 
     @media only screen and (min-width: 1024px) {
       position: relative;

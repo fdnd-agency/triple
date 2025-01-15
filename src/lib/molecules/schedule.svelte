@@ -1,7 +1,7 @@
 <script>
   // components imports
-  import ProgramCard from "../molecules/programCard.svelte";
-  import ScheduleTimes from "../atoms/schedule-times.svelte";
+  import ProgramCard from "$lib/molecules/programCard.svelte";
+  import ScheduleTimes from "$lib/atoms/schedule-times.svelte";
   import MarkdownIt from "markdown-it";
   const md = new MarkdownIt();
 
@@ -11,7 +11,6 @@
   // data import
   export let data;
   console.log(data);
-  // let { data } = $props();
 
   function getImageSource(show) {
     const programShow = show.mh_shows_id.show;
@@ -24,13 +23,13 @@
       programShow.users[0].mh_users_id &&
       programShow.users[0].mh_users_id.cover;
 
-    // Pakt de thumbnail van de show
+    // Get the thumbnail of the show
 
     const thumbnail =
       programShow && programShow.thumbnail && programShow.thumbnail.id;
 
-    // Als de cover niet bestaat of er geen users zijn, gebruik dan de thumbnail van de show
-    // Als er geen thumbnail of cover is gebruik een lege string
+    // If the cover doesn't exist, use the thumbnail of the show
+    // If there is no thumbail or cover use an empty string
 
     return {
       cover: firstUser ? `/${firstUser}` : thumbnail ? `/${thumbnail}` : "",
@@ -41,18 +40,18 @@
   // Helper function to get the show time
   function getShowTime(show) {
     const showId = show.mh_shows_id;
-    // Haalt de tijden op, als er geen tijden zijn, gebruik dan 00:00
+    // Recieves the times, if there is no time, use 00:00
     const from = showId && showId.from ? showId.from : "00:00";
     const until = showId && showId.until ? showId.until : "00:00";
 
-    // Verkleint de tijd van 04:00:00 naar 04:00
+    // Slices the time of 04:00:00 to 04:00
     const formattedFrom = from.slice(0, 5);
     const formattedUntil = until.slice(0, 5);
 
     return `${formattedFrom} - ${formattedUntil}`;
   }
 
-  // groepeer de radio stations
+  // Groups the radio stations
   function groupByRadioStation(shows) {
     const radioStation = {};
 
@@ -83,7 +82,7 @@
     return radioStation;
   }
 
-  // Groepeer de shows per radio station (dit is de call)
+  // Group the shows for each radio station (this is the call)
   const groupedShows = groupByRadioStation(
     (data && data.data && data.data[0] && data.data[0].shows) || [],
   );
@@ -143,7 +142,7 @@
       </div>
     {/each}
   {:else}
-    <p>No programs available</p>
+    <p>No programs available at this time</p>
   {/if}
 </div>
 
