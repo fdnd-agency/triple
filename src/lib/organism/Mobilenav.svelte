@@ -1,5 +1,5 @@
 <script>
-  import Slideinmenu from "$lib/molecules/Slideinmenu.svelte";
+  import Slideinmenu from "$lib/molecules/slideinmenu.svelte";
   import Tabmenu from "$lib/molecules/tabmenu.svelte";
 </script>
 

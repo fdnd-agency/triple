@@ -1,5 +1,5 @@
 <script>
-  import Tabmenu_link from "$lib/atoms/Tabmenu_link.svelte";
+  import Tabmenu_link from "$lib/atoms/tabmenu_link.svelte";
   import Slideinmenu from "$lib/molecules/slideinmenu.svelte";
 
   let menuVisible = false;

@@ -1,5 +1,5 @@
 <script>
-  import Slideinmenu_link from "$lib/atoms/Slideinmenu_link.svelte";
+  import Slideinmenu_link from "$lib/atoms/slideinmenu_link.svelte";
   export let menuVisible = false; // Prop to control visibility
 </script>
 
