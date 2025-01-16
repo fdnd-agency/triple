@@ -12,7 +12,9 @@
   <Mediaplayer class="" />
   <div class="content">
     <Tabs class="tabs" />
+  
     <WeekSelectie class="weekselectie" />
+  
     <Schedule class="schedule" {data} />
 
     <Footer />
@@ -30,5 +32,14 @@
 
   .content {
     width: 100%;
+  
   }
+
+  .week-selectie {
+    display: flex;
+    
+    width: 1%;
+  }
+
+  
 </style>

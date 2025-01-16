@@ -15,15 +15,17 @@
 
   let showCurrentMonth = monthNames[month];
   let daysInMonth = loadMonthDays(year, month);
-  let dayOfWeekButton;
+  let dayOfWeekA;
   let carousel;
 
   // Wait untill the DOM content is loaded. And excecute all functions on load.
   onMount(() => {
     // Calculate how many width in pixels 1 button has (I use getBounding because the values will depent on the screen resolution)
-    let buttonSize = dayOfWeekButton?.getBoundingClientRect().width;
+    let aSize = dayOfWeekA?.getBoundingClientRect().width;
+    console.log(aSize)
+    console.log(currentDayNumber)
     // Calculate how var you have to scroll, to reach te beginning of the button I multiply the size of the button in px with the curent number of the day (the number of buttons) and I subtract the size of one button from the outcome, otherwise you will reach the end of the button instead of the beginning.
-    let scrollLocation = buttonSize * currentDayNumber - buttonSize;
+    let scrollLocation = aSize * currentDayNumber - aSize;
     // Scroll to the left with smooth behavior, use the value of scroll location
     const scrollToCurrentDay = () =>
       carousel?.scrollBy({ left: scrollLocation, behavior: "smooth" });
@@ -55,14 +57,14 @@
     <ol bind:this={carousel}>
       <!-- Go trough daysinmonth array and recieve the output as dayofweek and day -->
       {#each daysInMonth as { dayOfWeek, day }}
-        <li bind:this={dayOfWeekButton} class="day-of-week-button">
+        <li bind:this={dayOfWeekA} class="day-of-week-a">
           <!-- if the dag is the same as the current day, get an active class -->
           <a
             data-sveltekit-reload
             href="/?datum={year}-{month + 1}-{day}"
-            class:button-active={day === currentDayNumber}
+            class:a-active={day === currentDayNumber}
             class:new-week={dayOfWeek === "zondag"}
-            class="day-button"
+            class="day-a"
           >
             <!-- Show the day of the week as a string -->
             <span>{dayOfWeek}</span>
@@ -97,7 +99,7 @@
     flex-direction: column;
     align-items: center;
     @media screen and (min-width: 980px) {
-      margin: 2em 18em 0 0;
+      margin-left: 5em ;
     }
   }
 
@@ -133,6 +135,20 @@
     z-index: 2;
   }
 
+  span {
+    display: flex;
+    justify-content: center;
+    width: 3em;
+  }
+
+  .day-of-week-a,
+  .day-of-week-a span,
+  .day-of-week-a a,
+  .day-of-week-a a span {
+    margin: 0;
+    padding: 0;
+  }
+
   .day-carousel::before,
   .day-carousel::after {
     content: "";
@@ -163,7 +179,8 @@
   }
 
   a,
-  .day-button {
+  button,
+  .day-a {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -177,12 +194,14 @@
     font-size: 0.9em;
     cursor: pointer;
     font-weight: bold;
+    width: 7em;
+    height: 5em;
     @media (prefers-reduced-motion: no-preference) {
       transition: 0.2s ease-in;
     }
   }
 
-  .button-active {
+  .a-active {
     background-color: var(--secondary-color);
     color: var(--light);
     & span {
@@ -190,12 +209,12 @@
     }
   }
 
-  .button-active span:first-of-type {
+  .a-active span:first-of-type {
     color: var(--light);
   }
 
-  li .day-button:hover,
-  li .day-button:focus {
+  li .day-a:hover,
+  li .day-a:focus {
     background-color: var(--primary-color);
     color: var(--light);
     border-radius: 15px;
@@ -204,12 +223,12 @@
     }
   }
 
-  .day-button:hover span:first-of-type,
-  .day-button:focus span:first-of-type {
+  .day-a:hover span:first-of-type,
+  .day-a:focus span:first-of-type {
     color: var(--light);
   }
 
-  .day-button span:nth-of-type(2) {
+  .day-a span:nth-of-type(2) {
     font-size: 1.5em;
   }
 
@@ -217,6 +236,7 @@
     background-color: var(--primary-color);
     padding: 0.5em;
   }
+
 
   .navigation-buttons:hover,
   .navigation-buttons:focus {
