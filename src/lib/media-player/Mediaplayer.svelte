@@ -121,7 +121,7 @@
               <button
                 aria-label="stop button"
                 class="audio__playstop--hidden-button"
-                on:click|preventDefault={stopAudio}
+                on:click={stopAudio}
               >
                 <img
                   width="93"
@@ -138,7 +138,7 @@
               <button
                 aria-label="play button"
                 class="audio__playstop--hidden-button"
-                on:click|preventDefault={playAudio}
+                on:click={playAudio}
               >
                 <img
                   width="93"
