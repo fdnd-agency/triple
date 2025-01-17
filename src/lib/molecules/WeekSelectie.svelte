@@ -17,9 +17,12 @@
   let daysInMonth = loadMonthDays(year, month);
   let dayOfWeekA;
   let carousel;
+  let selectedDay;
+  let isJsLoaded =false;
 
   // Wait untill the DOM content is loaded. And excecute all functions on load.
   onMount(() => {
+    isJsLoaded = true;
     // Calculate how many width in pixels 1 button has (I use getBounding because the values will depent on the screen resolution)
     let aSize = dayOfWeekA?.getBoundingClientRect().width;
     console.log(aSize)
@@ -30,7 +33,13 @@
     const scrollToCurrentDay = () =>
       carousel?.scrollBy({ left: scrollLocation, behavior: "smooth" });
     scrollToCurrentDay();
-  });
+    
+    // Function to retrieve the selected day from te local storage 
+    const savedDay = localStorage.getItem("selectedDay");
+      if (savedDay) {
+    selectedDay = parseInt(savedDay);
+  } 
+});
 </script>
 
 <!-- HTML -->
@@ -38,7 +47,8 @@
   <!-- Get the current month and year value from the variables and print it on the screen -->
   <h2>{showCurrentMonth} {year}</h2>
   <section class="day-carousel">
-    <button class="navigation-buttons" on:click={scrollLeft}>
+    {#if isJsLoaded}
+    <button class:navigation-buttons = {isJsLoaded} on:click={scrollLeft}>
       <svg
         width="28"
         height="36"
@@ -53,27 +63,37 @@
         />
       </svg>
     </button>
+    {/if}
     <!-- Connect the variable carousel to the ol -->
     <ol bind:this={carousel}>
       <!-- Go trough daysinmonth array and recieve the output as dayofweek and day -->
-      {#each daysInMonth as { dayOfWeek, day }}
+      {#each daysInMonth as { dayOfWeek, day }, index}
         <li bind:this={dayOfWeekA} class="day-of-week-a">
           <!-- if the dag is the same as the current day, get an active class -->
-          <a
-            data-sveltekit-reload
-            href="/?datum={year}-{month + 1}-{day}"
-            class:a-active={day === currentDayNumber}
-            class:new-week={dayOfWeek === "zondag"}
-            class="day-a"
+          <a on:click={() => {
+            selectedDay = index;
+            localStorage.setItem("selectedDay", index); 
+          }}
+          class:a-active={index === selectedDay}
+          class:current-day={day === currentDayNumber}
+          data-sveltekit-reload
+          href="/?datum={year}-{month + 1}-{day}"
+          class:new-week={dayOfWeek === "zondag"}
+          class="day-a"
           >
+          {#if day === currentDayNumber}
+          <span>vandaag</span>
+          {:else}
+    <span>{dayOfWeek}</span>
+  {/if}
             <!-- Show the day of the week as a string -->
-            <span>{dayOfWeek}</span>
             <!-- Show the day as a nummer -->
             <span>{day}</span>
           </a>
         </li>
       {/each}
     </ol>
+    {#if isJsLoaded}
     <button class="navigation-buttons" on:click={scrollRight}>
       <svg
         width="28"
@@ -89,6 +109,7 @@
         />
       </svg>
     </button>
+    {/if}
   </section>
 </section>
 
@@ -112,6 +133,8 @@
   }
   .day-carousel {
     position: relative;
+    margin: 0;
+    padding: 0;
     display: flex;
     width: 80%;
     overflow-x: auto; /* Verberg inhoud die buiten het zicht valt */
@@ -122,6 +145,7 @@
 
   ol {
     display: flex;
+    align-items: center;
     overflow-x: scroll;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
@@ -140,6 +164,7 @@
     justify-content: center;
     width: 3em;
   }
+  
 
   .day-of-week-a,
   .day-of-week-a span,
@@ -199,18 +224,30 @@
     @media (prefers-reduced-motion: no-preference) {
       transition: 0.2s ease-in;
     }
+    & span:nth-of-type(2) {
+      margin-top: 0.2em;
+    }
   }
 
   .a-active {
     background-color: var(--secondary-color);
     color: var(--light);
-    & span {
-      color: var(--light);
-    }
   }
 
   .a-active span:first-of-type {
     color: var(--light);
+  }
+
+  .current-day {
+    border: solid 5px var(--primary-color);
+  }
+
+  .a-active,
+  .current-day {
+    border-radius: 10px;
+    & span {
+      font-size: 1.3em;
+    }
   }
 
   li .day-a:hover,
