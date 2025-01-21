@@ -30,6 +30,7 @@
     // Calculate how var you have to scroll, to reach te beginning of the button I multiply the size of the button in px with the curent number of the day (the number of buttons) and I subtract the size of one button from the outcome, otherwise you will reach the end of the button instead of the beginning.
     let scrollLocation = aSize * currentDayNumber - aSize;
     // Scroll to the left with smooth behavior, use the value of scroll location
+    // TODO: remove function? and call directly
     const scrollToCurrentDay = () =>
       carousel?.scrollBy({ left: scrollLocation, behavior: "smooth" });
     scrollToCurrentDay();
@@ -37,8 +38,10 @@
     // Function to retrieve the selected day from te local storage 
     const savedDay = localStorage.getItem("selectedDay");
       if (savedDay) {
+        // TODO: wrap with try catch and handle error
     selectedDay = parseInt(savedDay);
   } 
+  
 });
 </script>
 
@@ -46,9 +49,9 @@
 <section class="month-overview">
   <!-- Get the current month and year value from the variables and print it on the screen -->
   <h2>{showCurrentMonth} {year}</h2>
-  <section class="day-carousel">
+  <section class="day-carousel" class:is-js-loaded-day-carousel={isJsLoaded} >
     {#if isJsLoaded}
-    <button class:navigation-buttons = {isJsLoaded} on:click={scrollLeft}>
+    <button class="navigation-buttons" on:click={scrollLeft}>
       <svg
         width="28"
         height="36"
@@ -65,7 +68,7 @@
     </button>
     {/if}
     <!-- Connect the variable carousel to the ol -->
-    <ol bind:this={carousel}>
+    <ol bind:this={carousel} class:is-js-loaded-day-ol={isJsLoaded}>
       <!-- Go trough daysinmonth array and recieve the output as dayofweek and day -->
       {#each daysInMonth as { dayOfWeek, day }, index}
         <li bind:this={dayOfWeekA} class="day-of-week-a">
@@ -119,7 +122,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    @media screen and (min-width: 980px) {
+    @media (min-width: 980px) {
       margin-left: 5em ;
     }
   }
@@ -127,7 +130,7 @@
   h2 {
     font-size: 1.3em;
     margin: 0 auto;
-    @media screen and (min-width: 500px) {
+    @media (min-width: 500px) {
       font-size: 1.7em;
     }
   }
@@ -137,24 +140,25 @@
     padding: 0;
     display: flex;
     width: 80%;
-    overflow-x: auto; /* Verberg inhoud die buiten het zicht valt */
-    @media screen and (min-width: 960px) {
+    overflow-x: scroll; /* Verberg inhoud die buiten het zicht valt */
+    @media (min-width: 960px) {
       font-size: 1.5em;
     }
   }
 
   ol {
-    display: flex;
-    align-items: center;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-    margin: 0;
-    padding: 0;
-    position: relative;
-  }
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
 
-  button.navigation-buttons {
+
+  .navigation-buttons {
     position: relative;
     z-index: 2;
   }
@@ -186,7 +190,7 @@
   }
 
   .day-carousel::before {
-    left: 1em; /* Add blur next to the first button */
+    left: 0; /* Add blur next to the first button */
     background: linear-gradient(
       to right,
       rgba(255, 255, 255, 1),
@@ -195,12 +199,22 @@
   }
 
   .day-carousel::after {
-    right: 1em; /* Add blur next to the last button */
+    right: 0; /* Add blur next to the last button */
     background: linear-gradient(
       to left,
       rgba(255, 255, 255, 1),
       rgba(255, 255, 255, 0)
     ); /* Right blur */
+  }
+
+  .is-js-loaded-day-carousel.day-carousel::after {
+    right: 2em; /* Add blur next to the last button */
+
+  }
+
+  .is-js-loaded-day-carousel.day-carousel::before {
+    left: 2em; /* Add blur next to the first button */
+
   }
 
   a,
@@ -276,7 +290,7 @@
 
 
   .navigation-buttons:hover,
-  .navigation-buttons:focus {
+  .navigation-buttons:focus-visible {
     background-color: var(--hover-secondary);
     @media (prefers-reduced-motion: no-preference) {
       scale: 0.9;
@@ -296,7 +310,7 @@
   .new-week {
     border-right: solid 8px var(--secondary-color);
 
-    @media screen and (min-width: 960px) {
+    @media (min-width: 960px) {
       border-right: solid 10px var(--secondary-color);
     }
   }
