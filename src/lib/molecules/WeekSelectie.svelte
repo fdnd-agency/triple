@@ -46,12 +46,9 @@
     // Calculate how var you have to scroll, to reach te beginning of the button I multiply the size of the button in px with the curent number of the day (the number of buttons) and I subtract the size of one button from the outcome, otherwise you will reach the end of the button instead of the beginning.
     let scrollLocation = aSize * lastNumbers || currentDayNumber - aSize;
     // Scroll to the left with smooth behavior, use the value of scroll location
-    // TODO: remove function? and call directly
     const scrollToCurrentDay = () =>
       carousel?.scrollBy({ left: scrollLocation, behavior: "smooth" });
     scrollToCurrentDay();
-
-    // Function to retrieve the selected day from te local storage
   });
 </script>
 
@@ -150,7 +147,6 @@
 
   .day-carousel {
     position: relative;
-    margin: 0;
     padding: 0;
     display: flex;
     width: 100%;
@@ -160,6 +156,24 @@
       font-size: 1.5em;
     }
   }
+
+  ::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+  ::-webkit-scrollbar-thumb {
+  width: 30%;;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  @media (min-width: 960px) {
+    width: 20%;
+
+  }
+
+  @media (min-width: 600px) {
+    width: 10%;
+  }
+}
 
   ol {
     display: flex;
