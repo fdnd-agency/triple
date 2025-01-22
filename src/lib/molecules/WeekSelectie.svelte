@@ -127,30 +127,36 @@
 
 <style>
   .month-overview {
-    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 1rem;
+    gap: 1rem;
     @media (min-width: 980px) {
       margin-left: 5em;
     }
   }
 
   h2 {
-    font-size: 1.3em;
-    margin: 0 auto;
-    @media (min-width: 500px) {
-      font-size: 1.7em;
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    @media (min-width: 600px) {
+      font-size: 1.7rem;
+    }
+    @media (min-width: 960px) {
+      font-size: 1.8rem;
     }
   }
+
   .day-carousel {
     position: relative;
     margin: 0;
     padding: 0;
     display: flex;
-    width: 80%;
+    width: 100%;
     overflow-x: scroll; /* Verberg inhoud die buiten het zicht valt */
     @media (min-width: 960px) {
+      width: 80%;
       font-size: 1.5em;
     }
   }
@@ -235,16 +241,21 @@
     font-family: var(--font-family);
     color: var(--dark);
     padding: 1em;
-    font-size: 0.9em;
+    font-size: 1rem;
     cursor: pointer;
-    font-weight: bold;
-    width: 7em;
-    height: 5em;
+    width: 6em;
+    height: 4em;
     @media (prefers-reduced-motion: no-preference) {
       transition: 0.2s ease-in;
     }
     & span:nth-of-type(2) {
       margin-top: 0.2em;
+    }
+    @media (min-width: 960px) {
+      font-size: 1.2rem;
+    }
+    @media (min-width: 960px) {
+      font-size: 1.4rem;
     }
   }
 
@@ -264,9 +275,6 @@
   .a-active,
   .current-day {
     border-radius: 10px;
-    & span {
-      font-size: 1.3em;
-    }
   }
 
   li .day-a:hover,
@@ -285,7 +293,15 @@
   }
 
   .day-a span:nth-of-type(2) {
-    font-size: 1.5em;
+    font-weight: bold;
+    font-size: 1.1rem;
+    @media (min-width: 960px) {
+      font-size: 1.3rem;
+    }
+
+    @media (min-width: 600px) {
+      font-size: 1.6rem;
+    }
   }
 
   .navigation-buttons {
@@ -302,13 +318,13 @@
   }
 
   .navigation-buttons:first-of-type {
-    border-top-left-radius: 7px;
-    border-bottom-left-radius: 7px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
   }
 
   .navigation-buttons:last-of-type {
-    border-top-right-radius: 7px;
-    border-bottom-right-radius: 7px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
   }
 
   .new-week {
