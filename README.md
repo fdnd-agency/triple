@@ -1,3 +1,5 @@
+<img width="1676" alt="Schermafbeelding 2025-01-22 om 15 45 43" src="https://github.com/user-attachments/assets/350b10b5-847e-4a5b-aacf-efda79a12cdf" />
+
 # Ons Project
 
 We hebben een radiogids gebouwd voor Mediahuis. Op deze gids kun je een dag selecteren, waarna je op de gekozen dag alle tijdstippen van de radioshows en de radio-dj's die draaien tijdens de show kunt bekijken.
@@ -17,10 +19,10 @@ We hebben een radiogids gebouwd voor Mediahuis. Op deze gids kun je een dag sele
 
 ## Teamleden
 
-- Daan  
-- Lesley  
-- Tom  
-- Jelte  
+- Daan [GitHub](https://github.com/Daan645)
+- Lesley [GitHub](https://github.com/OniWithTheHoodie)  
+- Tom [GitHub](https://github.com/TomDeeterink1)  
+- Jelte [GitHub](https://github.com/driezie) 
 
 ## Installatie
 
