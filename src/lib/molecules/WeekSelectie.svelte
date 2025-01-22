@@ -16,13 +16,15 @@
 
   let lastNumbers;
   export let clickedDay;
+
+  const { year, month, day: currentDayNumber } = getCurrentDateInfo();
+
   // get last index numbers
   if (clickedDay) {
     lastNumbers = clickedDay.match(/\d+$/)[0];
     lastNumbers = Number(lastNumbers - 1);
-  }
+  } else lastNumbers = currentDayNumber -1;
 
-  const { year, month, day: currentDayNumber } = getCurrentDateInfo();
 
   // Scroll left and right functions
   const scrollLeft = () =>
@@ -85,7 +87,7 @@
             class:a-active={index === lastNumbers ||
               (index === currentDayNumber && currentDayNumber == lastNumbers)}
             class:current-day={day === currentDayNumber &&
-              currentDayNumber == lastNumbers}
+              currentDayNumber === lastNumbers}
             data-sveltekit-reload
             href="/?datum={year}-{month + 1}-{day}"
             class:new-week={dayOfWeek === "zondag"}
