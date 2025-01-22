@@ -4,6 +4,8 @@
 
 We hebben een radiogids gebouwd voor Mediahuis. Op deze gids kun je een dag selecteren, waarna je op de gekozen dag alle tijdstippen van de radioshows en de radio-dj's die draaien tijdens de show kunt bekijken.
 
+[Live link](https://mediahuis.agency.fdnd.nl/)
+
 ## Technieken
 
 - **HTML**
