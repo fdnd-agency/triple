@@ -1,5 +1,6 @@
 import fetchJson from "$lib/fetch-json";
 export default async function getData(datum) {
+  console.log(datum)
 
   const API = 'https://fdnd-agency.directus.app/items/';
   const day = `${API}mh_day`;

@@ -20,14 +20,6 @@ export const loadMonthDays = (year, month) => {
   return monthDays;
 };
 
-export const getCurrentDateInfo = () => {
-  const dateAndTime = new Date();
-  return {
-    year: dateAndTime.getFullYear(),
-    month: dateAndTime.getMonth(),
-    day: dateAndTime.getDate(),
-  };
-};
 
 export const monthNames = [
   "januari",

@@ -2,11 +2,32 @@
   import { onMount } from "svelte";
   import {
     loadMonthDays,
-    getCurrentDateInfo,
     monthNames,
   } from "$lib/scripts/Weekselectie/GetDates.js";
 
-  const { year, month, day: currentDayNumber } = getCurrentDateInfo();
+  function getCurrentDateInfo() {
+  const dateAndTime = new Date();
+  return {
+    year: dateAndTime.getFullYear(),
+    month: dateAndTime.getMonth(),
+    day: dateAndTime.getDate(),
+  };
+};
+
+  let lastNumbers;
+  export let clickedDay;
+  // get last index numbers
+  if (clickedDay) {
+    lastNumbers = clickedDay.match(/\d+$/)[0];
+    lastNumbers = Number(lastNumbers - 1);
+  }
+  
+
+
+  const { year, month, day: currentDayNumber } = getCurrentDateInfo() 
+  console.log("currentDayNumber: " + currentDayNumber)
+
+  
   // Scroll left and right functions
   const scrollLeft = () =>
     carousel?.scrollBy({ left: -200, behavior: "smooth" });
@@ -17,8 +38,8 @@
   let daysInMonth = loadMonthDays(year, month);
   let dayOfWeekA;
   let carousel;
-  let selectedDay;
   let isJsLoaded =false;
+
 
   // Wait untill the DOM content is loaded. And excecute all functions on load.
   onMount(() => {
@@ -36,11 +57,7 @@
     scrollToCurrentDay();
     
     // Function to retrieve the selected day from te local storage 
-    const savedDay = localStorage.getItem("selectedDay");
-      if (savedDay) {
-        // TODO: wrap with try catch and handle error
-    selectedDay = parseInt(savedDay);
-  } 
+ 
   
 });
 </script>
@@ -73,12 +90,10 @@
       {#each daysInMonth as { dayOfWeek, day }, index}
         <li bind:this={dayOfWeekA} class="day-of-week-a">
           <!-- if the dag is the same as the current day, get an active class -->
-          <a on:click={() => {
-            selectedDay = index;
-            localStorage.setItem("selectedDay", index); 
-          }}
-          class:a-active={index === selectedDay}
-          class:current-day={day === currentDayNumber}
+
+          <a 
+          class:a-active={index === lastNumbers}
+          class:current-day={day === currentDayNumber && currentDayNumber == lastNumbers}
           data-sveltekit-reload
           href="/?datum={year}-{month + 1}-{day}"
           class:new-week={dayOfWeek === "zondag"}
