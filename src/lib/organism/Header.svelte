@@ -29,7 +29,7 @@
   .header {
     z-index: 999;
     top: 0;
-    position: fixed;
+    position: sticky;
     padding: 1rem 2rem;
     background-color: var(--primary-color);
     display: flex;

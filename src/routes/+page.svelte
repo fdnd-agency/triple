@@ -11,9 +11,10 @@
 
 <main>
   <Mediaplayer class="" />
+
   <div class="content">
     <Tabs class="tabs" />
-  
+
     <WeekSelectie class="weekselectie" {clickedDay}/>
   
     <Schedule class="schedule" {data} />
@@ -32,6 +33,7 @@
   }
 
   .content {
+   
     width: 100%;
   
   }

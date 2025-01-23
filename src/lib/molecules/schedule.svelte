@@ -153,9 +153,9 @@
     overflow: scroll;
     padding: 1rem;
     position: relative;
+    margin-bottom: 11rem;
 
     @media (max-width: 20em) {
-      margin-bottom: 11rem;
     }
 
     @media (min-width: 40em) {
