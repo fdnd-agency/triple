@@ -333,24 +333,20 @@
 
 <style>
   .audio {
-    top: 70px;
-    position: sticky;
-    height: calc(100vh - 70px);
     background: white;
-    bottom: 150px;
+    z-index: 4;
+    top: unset;
+    position: fixed;
+    height: auto;
+    bottom: 90px;
     width: 100%;
 
-    @media (max-width: 980px) {
-      z-index: 4;
-      top: unset;
-      position: absolute;
-      height: auto;
-      /* width: 100vw;  */
+    @media (min-width: 980px) {
+      top: 70px;
+      position: sticky;
+      height: calc(100vh - 70px);
+      background: white;
       bottom: 150px;
-    }
-
-    @media (min-width: 981px) {
-      bottom: 0;
     }
   }
 

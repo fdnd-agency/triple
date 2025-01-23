@@ -27,9 +27,9 @@
 
 <style>
   .header {
-    z-index: 5;
+    z-index: 999;
     top: 0;
-    position: sticky;
+    position: fixed;
     padding: 1rem 2rem;
     background-color: var(--primary-color);
     display: flex;

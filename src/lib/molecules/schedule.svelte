@@ -10,7 +10,7 @@
 
   // data import
   export let data;
-  console.log(data)
+  console.log(data);
 
   function getImageSource(show) {
     const programShow = show.mh_shows_id.show;
@@ -153,6 +153,7 @@
     overflow: scroll;
     padding: 1rem;
     position: relative;
+    margin-bottom: 11rem;
 
     @media (min-width: 40em) {
       padding: 2rem;

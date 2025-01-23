@@ -29,8 +29,17 @@
     padding: 1em 0em;
     display: flex;
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     z-index: 99;
+    display: none;
+    max-height: 90px;
+    height: 90px;
+  }
+
+  @media only screen and (max-width: 960px) {
+    ul {
+      display: flex;
+    }
   }
 </style>

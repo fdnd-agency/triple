@@ -81,7 +81,7 @@
 
 <style>
   a {
-    padding: 2em 0em;
+    /* padding: 2em 0em; */
     display: flex;
     flex-direction: column;
     gap: 0.5em;
@@ -89,7 +89,7 @@
     color: var(--grey);
     font-weight: 700;
     text-transform: uppercase;
-    font-size: 3vw;
+    font-size: 1rem;
     font-family: var(--font-family);
   }
 
@@ -100,9 +100,9 @@
     transition: ease-in 0.3s;
   }
 
-  @media only screen and (min-width: 500px) {
+  @media only screen and (max-width: 500px) {
     a {
-      font-size: 16px;
+      font-size: 0.8rem;
     }
   }
 
