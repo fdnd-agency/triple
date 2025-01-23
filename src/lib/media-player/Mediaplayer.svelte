@@ -1,31 +1,33 @@
 <script>
   import { onMount } from "svelte";
-  // Variable to use the audio file
-  let audio;
-  // Variable to keep track if the audio file is being played
+  // referentie naar de audio element om muziek te kunnen afspelen of stoppen
+  let audioElement;
+  // Variable om bij te houden of de audio file wordt afgespeeld
   let isPlaying = false;
-
-  // Function to play the audio
-  // Has an boolean value of true so the audio will be played
+  // Functie om de audio te aftespelen
+  // heeft een boolean van true dat de audio wordt afgespeeld
   function playAudio() {
-    if (audio) {
-      audio.play();
+    if (audioElement) {
+      audioElement.play();
       isPlaying = true;
     }
   }
-  // Function to stop the audio
-  // Has an boolean value of false so the audio will be played
+  // Functie om de audio te stoppen
+  // heeft een boolean van false dat de audio wordt gestopt
   function stopAudio() {
-    if (audio) {
-      audio.pause();
+    if (audioElement) {
+      audioElement.pause();
       isPlaying = false;
     }
   }
-
-  // Function that is being called when the component is being `OnMount`
+  // Functie die wordt uitgevoerd wanneede component wordt gemount
   onMount(() => {
-    // Here I send the audio file
-    audio = new Audio("/muziek/Amy Winehouse - Back To Black.mp3");
+    // voeg een event listener toe aan de audio element om te kijken of de audio is afgelopen
+    if (audioElement) {
+      audioElement.addEventListener("ended", () => {
+        isPlaying = false;
+      });
+    }
   });
 </script>
 
@@ -35,8 +37,8 @@
       <!-- navigation media player-->
       <div class="audio__player-container">
         <ul class="audio__list">
-          <li class="audio__link"><a href="/">LIVE</a></li>
-          <li class="audio__link"><a href="/">STATIONS</a></li>
+          <li class="audio__link"><a href="/">live</a></li>
+          <li class="audio__link"><a href="/">stations</a></li>
           <li>
             <a href="/" aria-label="Pop out"
               ><img
@@ -70,29 +72,29 @@
         </figure>
 
         <article class="audio__text">
-          <h2>Goud van oud</h2>
-          <p class="audio__omschrijving">
+          <h2>Goud <span class="audio__hidden-text">van oud</span></h2>
+          <div class="audio__text-group">
             <img
               width="93"
               class="audio__klok"
               alt="tijd icoon"
               src="/Time.svg"
-            /> Back To Black - Amy Winehouse
-          </p>
+            /> 
+            <p class="audio__omschrijving">Back <span class="audio__hidden-text">To Black - Amy Winehouse</span></p>
+          </div>
         </article>
 
         <ul class="audio__group">
           <li>
-            <a href="/" aria-label="Kijk live" class="audio__kijk-live">
+            <button aria-label="kijk live" class="audio__livehidden-button">
               <img
                 width="93"
                 class="audio__group-live"
-                id="audio__live-btn"
-                alt="kijk live button"
+                alt=""
                 src="/live-icon.svg"
               />
-              <p>Kijk live</p>
-            </a>
+              Kijk live
+            </button>
           </li>
           <li>
             <a href="/" aria-label="Casting">
@@ -105,55 +107,60 @@
               />
             </a>
           </li>
-          <!-- If statement if the audio is being played -->
+
+          <!-- Audio element to play the music in which i have binded the audio element for it to work-->
+          <audio
+            bind:this={audioElement}
+            src="/muziek/Amy Winehouse - Back To Black.mp3"
+          >
+          </audio>
+
+          <!-- de if statement om te kijken of de audio wordt afgespeeld -->
           {#if isPlaying}
             <li>
-              <!-- The pause button will be visible if clicked and will ignore page reload because of the prevent default -->
-              <a
-                href="#"
-                aria-label="Pause"
-                class="audio__pause"
-                on:click|preventDefault={stopAudio}
+              <!-- de pause button word weergeven en gebruikt als de play button actief word en met prevent default wordt er voor gezorgt dat de gebruiker niet naar een andere pagina wordt toegeleid -->
+              <button
+                aria-label="stop button"
+                class="audio__playstop--hidden-button"
+                on:click={stopAudio}
               >
                 <img
                   width="93"
                   class="audio__group-pause"
-                  alt="pause button"
+                  alt=""
                   src="/stop-button.svg"
                 />
-              </a>
+              </button>
             </li>
-            <!-- If not playing, play button will show -->
+            <!-- anders wordt de play button weergegeven -->
           {:else}
             <li>
-              <!-- The play button will be visible if clicked and will ignore page reload because of the prevent default -->
-              <a
-                href="#"
-                aria-label="Play"
-                class="audio__play"
-                on:click|preventDefault={playAudio}
+              <!-- de play button word weergeven en gebruikt als de pause button actief word en met prevent default wordt er voor gezorgt dat de gebruiker niet naar een andere pagina wordt toegeleid -->
+              <button
+                aria-label="play button"
+                class="audio__playstop--hidden-button"
+                on:click={playAudio}
               >
                 <img
                   width="93"
                   class="audio__group-play"
-                  alt="play button"
+                  alt=""
                   src="/play-button.svg"
                 />
-              </a>
+              </button>
             </li>
-            <!-- Closing of the if statement -->
+            <!-- de if statement sluit -->
           {/if}
           <li>
-            <a href="/" aria-label="whats app" class="audio__whats-app">
+            <button aria-label="app studio" class="audio__apphidden-button">
               <img
                 width="93"
                 class="audio__group-whatsapp"
-                id="audio__app-btn"
-                alt="whats app button"
+                alt=""
                 src="/Whatsapp-Icon-Link.svg"
               />
-              <p>App studio</p>
-            </a>
+              App studio
+            </button>
           </li>
         </ul>
       </div>
@@ -194,14 +201,14 @@
             </div>
           </div>
           <div class="audio__lijst">
-            <a href="/" class="audio__lijst-link" aria-label="volledige lijst">
+            <button aria-label="volledige lijst" class="audio__hidden-button">
               Volledige lijst<img
                 class="audio__pijl"
                 width="93"
                 src="/pijl.svg"
-                alt="pijl icoon volgende lijst"
+                alt=""
               />
-            </a>
+            </button>
           </div>
         </article>
       </div>
@@ -215,14 +222,20 @@
     position: sticky;
     height: calc(100vh - 70px);
     background: white;
+    bottom: 150px;
+    width: 100%;
 
     @media (max-width: 980px) {
       z-index: 4;
       top: unset;
       position: absolute;
       height: auto;
-      bottom: 170px;
-      width: 98vw;
+      /* width: 100vw;  */
+      bottom: 150px;
+    }
+
+    @media (min-width: 981px) {
+      bottom: 0;
     }
   }
 
@@ -231,7 +244,8 @@
   }
 
   .audio__container {
-    margin: 0.5rem;
+    margin: 0.2rem;
+    width: 100%;
 
     @media (min-width: 982px) {
       margin: 0;
@@ -240,18 +254,27 @@
 
   .audio__player {
     box-shadow: 7px 3px 25px 0px rgba(213 210 213);
-    width: 300px;
+    width: 100%;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     height: calc(100vh - 70px);
     gap: 1rem;
-    width: 100%;
+    position: relative;
+
+    @media (min-width: 390px) {
+      width: 100%;
+    }
 
     @media (max-width: 980px) {
       height: auto;
       flex-direction: row;
+    }
+
+    @media (min-width: 1280px) {
+      width: 300px;
     }
   }
 
@@ -259,7 +282,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.8rem;
+    gap: 0.5rem;
     @media (max-width: 980px) {
       flex-direction: row;
       width: 100%;
@@ -281,6 +304,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
+    width: 110px;
 
     @media only screen and (min-width: 982px) {
       align-items: center;
@@ -290,7 +314,12 @@
   }
 
   h2 {
-    width: 155px;
+    width: 60px;
+
+    @media screen and (min-width: 320px) {
+      width: 155px;
+      
+    }
   }
 
   .audio__klok {
@@ -298,6 +327,31 @@
   }
 
   .audio__omschrijving {
+    /* width: 204px;
+    max-width: 100%; */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    animation: scroll-text 5s linear infinite;
+  }
+
+  .audio__hidden-text {
+    @media only screen and (max-width: 320px) {
+      display: none;
+    }
+  }
+
+  /* @keyframes scroll-text {
+      from {
+        transform: translateX(5%);
+      }
+      to {
+        transform: translateX(0%);
+      }
+    } */
+
+
+  .audio__text-group {
     display: flex;
     flex-direction: row;
     gap: 0.2rem;
@@ -312,14 +366,14 @@
     gap: 0.7rem;
     align-items: center;
     justify-content: flex-end;
-    padding: 0.5rem;
-    margin-left: auto;
+    
 
-    @media only screen and (min-width: 600px) and (max-width: 980px) {
+    @media (min-width: 320px) and (max-width: 980px) {
       justify-content: flex-end;
+      margin-left: auto;
     }
 
-    @media only screen and (min-width: 982px) {
+    @media (min-width: 982px) {
       align-items: unset;
       margin-left: unset;
     }
@@ -334,29 +388,31 @@
     }
   }
 
-  .audio__group-play {
+  .audio__group-play,
+  .audio__group-pause {
     height: 1.5rem;
     width: 1.5rem;
 
-    @media only screen and (min-width: 982px) {
+    @media screen and (min-width: 982px) {
       height: 2.5rem;
       width: 2.5rem;
     }
   }
 
-  .audio__group-pause {
-    height: 1.5rem;
-    width: 1.5rem;
-
-    @media only screen and (min-width: 982px) {
-      height: 2.5rem;
-      width: 2.5rem;
-    }
+  .audio__playstop--hidden-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
   }
 
   /* TABS DESKTOP */
 
   .audio__list {
+    display: none;
+
+
+    @media only screen and (min-width: 980px) {
     padding-top: 1rem;
     display: flex;
     flex-direction: row;
@@ -366,9 +422,6 @@
     font-weight: 900;
     align-items: center;
     width: 100%;
-
-    @media only screen and (min-width: 320px) and (max-width: 980px) {
-      display: none;
     }
   }
 
@@ -381,7 +434,7 @@
   }
 
   .audio__dj-text {
-    @media only screen and (min-width: 320px) and (max-width: 980px) {
+    @media only screen and (max-width: 980px) {
       display: none;
     }
   }
@@ -410,6 +463,7 @@
 
   .audio__link {
     list-style-type: none;
+    text-transform: uppercase;
   }
 
   a {
@@ -434,12 +488,17 @@
     height: 1.25rem;
   }
 
-  .audio__kijk-live {
-    @media only screen and (min-width: 320px) and (max-width: 980px) {
+  .audio__livehidden-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--grey);
+
+    @media screen and (max-width: 980px) {
       display: none;
     }
 
-    @media only screen and (min-width: 982px) {
+    @media screen and (min-width: 982px) {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -447,17 +506,31 @@
     }
   }
 
-  .audio__whats-app {
-    @media only screen and (min-width: 320px) and (max-width: 980px) {
+  .audio__livehidden-button:hover {
+    color: var(--secondary-color);
+  }
+
+  .audio__apphidden-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: var(--grey);
+
+    @media screen and (max-width: 980px) {
       display: none;
     }
 
-    @media only screen and (min-width: 982px) {
+    @media screen and (min-width: 982px) {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 0.2rem;
     }
+  }
+
+  .audio__apphidden-button:hover {
+    color: var(--secondary-color);
   }
 
   .audio__link a:hover {
@@ -473,7 +546,7 @@
 
   /* Next */
   .audio__volgende {
-    @media only screen and (min-width: 320px) and (max-width: 980px) {
+    @media only screen and (max-width: 980px) {
       display: none;
     }
 
@@ -614,8 +687,13 @@
     grid-row: 3 / 4;
   }
 
-  .audio__lijst-link {
+  .audio__hidden-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
     display: flex;
+    width: 100%;
     flex-direction: row;
     gap: 1rem;
     font-size: 1.2rem;
