@@ -614,8 +614,14 @@
     }
   }
 
-  .audio__livehidden-button:hover {
+  .audio__livehidden-button:hover,
+  .audio__apphidden-button:hover {
     color: var(--secondary-color);
+  }
+
+  .audio__group-live:hover path,
+  .audio__group-whatsapp:hover path {
+    fill: var(--secondary-color);
   }
 
   .audio__apphidden-button {
@@ -635,10 +641,6 @@
       align-items: center;
       gap: 0.2rem;
     }
-  }
-
-  .audio__apphidden-button:hover {
-    color: var(--secondary-color);
   }
 
   .audio__link a:hover {
