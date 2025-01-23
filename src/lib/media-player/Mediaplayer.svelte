@@ -438,12 +438,9 @@
   }
 
   .audio__omschrijving {
-    /* width: 204px;
-    max-width: 100%; */
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    animation: scroll-text 5s linear infinite;
   }
 
   .audio__hidden-text {
@@ -451,15 +448,6 @@
       display: none;
     }
   }
-
-  /* @keyframes scroll-text {
-      from {
-        transform: translateX(5%);
-      }
-      to {
-        transform: translateX(0%);
-      }
-    } */
 
   .audio__text-group {
     display: flex;
