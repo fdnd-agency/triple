@@ -10,7 +10,9 @@
 </script>
 
 <ul>
-  <li><Tabmenu_link label="home" /></li>
+  <li><Tabmenu_link label="home" onclick={() => {
+    if (menuVisible) toggleMenu();
+  }}  href="#" /></li>
   <li><Tabmenu_link label="ontdek" /></li>
   <li><Tabmenu_link label="radio" /></li>
   <li><Tabmenu_link label="meer" onclick={toggleMenu} href="#" /></li>
