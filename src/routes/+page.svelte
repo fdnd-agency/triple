@@ -6,6 +6,7 @@
   import Footer from "../lib/organism/Footer.svelte";
 
   export let data;
+  const clickedDay = data.clickedDay
 </script>
 
 <main>
@@ -13,7 +14,7 @@
   <div class="content">
     <Tabs class="tabs" />
   
-    <WeekSelectie class="weekselectie" />
+    <WeekSelectie class="weekselectie" {clickedDay}/>
   
     <Schedule class="schedule" {data} />
 

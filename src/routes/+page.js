@@ -7,6 +7,7 @@ export async function load({ params, url }) {
   const data = await getData(clickedDay || currentDay);
 
   return {
+    clickedDay,
     data: data.data
   };
 }
