@@ -72,15 +72,16 @@
         </figure>
 
         <article class="audio__text">
-          <h2>Goud van oud</h2>
-          <p class="audio__omschrijving">
+          <h2>Goud <span class="audio__hidden-text">van oud</span></h2>
+          <div class="audio__text-group">
             <img
               width="93"
               class="audio__klok"
               alt="tijd icoon"
               src="/Time.svg"
-            /> Back To Black - Amy Winehouse
-          </p>
+            /> 
+            <p class="audio__omschrijving">Back <span class="audio__hidden-text">To Black - Amy Winehouse</span></p>
+          </div>
         </article>
 
         <ul class="audio__group">
@@ -222,13 +223,14 @@
     height: calc(100vh - 70px);
     background: white;
     bottom: 150px;
+    width: 100%;
 
     @media (max-width: 980px) {
       z-index: 4;
       top: unset;
       position: absolute;
       height: auto;
-      width: 100vw;
+      /* width: 100vw;  */
       bottom: 150px;
     }
 
@@ -243,6 +245,7 @@
 
   .audio__container {
     margin: 0.2rem;
+    width: 100%;
 
     @media (min-width: 982px) {
       margin: 0;
@@ -251,7 +254,7 @@
 
   .audio__player {
     box-shadow: 7px 3px 25px 0px rgba(213 210 213);
-    width: 370px;
+    width: 100%;
     padding: 5px;
     display: flex;
     flex-direction: column;
@@ -301,6 +304,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
+    width: 110px;
 
     @media only screen and (min-width: 982px) {
       align-items: center;
@@ -310,7 +314,12 @@
   }
 
   h2 {
-    width: 155px;
+    width: 60px;
+
+    @media screen and (min-width: 320px) {
+      width: 155px;
+      
+    }
   }
 
   .audio__klok {
@@ -318,6 +327,31 @@
   }
 
   .audio__omschrijving {
+    /* width: 204px;
+    max-width: 100%; */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    animation: scroll-text 5s linear infinite;
+  }
+
+  .audio__hidden-text {
+    @media only screen and (max-width: 320px) {
+      display: none;
+    }
+  }
+
+  /* @keyframes scroll-text {
+      from {
+        transform: translateX(5%);
+      }
+      to {
+        transform: translateX(0%);
+      }
+    } */
+
+
+  .audio__text-group {
     display: flex;
     flex-direction: row;
     gap: 0.2rem;
@@ -332,12 +366,11 @@
     gap: 0.7rem;
     align-items: center;
     justify-content: flex-end;
-    margin-left: auto;
-    /* position: absolute;
-    left: 18.5rem; */
+    
 
-    @media (min-width: 600px) and (max-width: 980px) {
+    @media (min-width: 320px) and (max-width: 980px) {
       justify-content: flex-end;
+      margin-left: auto;
     }
 
     @media (min-width: 982px) {
@@ -376,6 +409,10 @@
   /* TABS DESKTOP */
 
   .audio__list {
+    display: none;
+
+
+    @media only screen and (min-width: 980px) {
     padding-top: 1rem;
     display: flex;
     flex-direction: row;
@@ -385,9 +422,6 @@
     font-weight: 900;
     align-items: center;
     width: 100%;
-
-    @media only screen and (min-width: 320px) and (max-width: 980px) {
-      display: none;
     }
   }
 
@@ -400,7 +434,7 @@
   }
 
   .audio__dj-text {
-    @media only screen and (min-width: 320px) and (max-width: 980px) {
+    @media only screen and (max-width: 980px) {
       display: none;
     }
   }
@@ -460,7 +494,7 @@
     cursor: pointer;
     color: var(--grey);
 
-    @media screen and (min-width: 320px) and (max-width: 980px) {
+    @media screen and (max-width: 980px) {
       display: none;
     }
 
@@ -472,6 +506,10 @@
     }
   }
 
+  .audio__livehidden-button:hover {
+    color: var(--secondary-color);
+  }
+
   .audio__apphidden-button {
     background: none;
     border: none;
@@ -479,7 +517,7 @@
     padding: 0;
     color: var(--grey);
 
-    @media screen and (min-width: 320px) and (max-width: 980px) {
+    @media screen and (max-width: 980px) {
       display: none;
     }
 
@@ -489,6 +527,10 @@
       align-items: center;
       gap: 0.2rem;
     }
+  }
+
+  .audio__apphidden-button:hover {
+    color: var(--secondary-color);
   }
 
   .audio__link a:hover {
@@ -504,7 +546,7 @@
 
   /* Next */
   .audio__volgende {
-    @media only screen and (min-width: 320px) and (max-width: 980px) {
+    @media only screen and (max-width: 980px) {
       display: none;
     }
 
