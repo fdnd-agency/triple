@@ -25,7 +25,6 @@
     lastNumbers = Number(lastNumbers - 1);
   } else lastNumbers = currentDayNumber -1;
 
-
   // Scroll left and right functions
   const scrollLeft = () =>
     carousel?.scrollBy({ left: -200, behavior: "smooth" });
@@ -150,7 +149,7 @@
     padding: 0;
     display: flex;
     width: 100%;
-    overflow-x: scroll; /* Verberg inhoud die buiten het zicht valt */
+    overflow-x: scroll; 
     @media (min-width: 960px) {
       width: 80%;
       font-size: 1.5em;

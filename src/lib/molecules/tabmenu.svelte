@@ -10,7 +10,9 @@
 </script>
 
 <ul>
-  <li><Tabmenu_link label="home" /></li>
+  <li><Tabmenu_link label="home" onclick={() => {
+    if (menuVisible) toggleMenu();
+  }}  href="#" /></li>
   <li><Tabmenu_link label="ontdek" /></li>
   <li><Tabmenu_link label="radio" /></li>
   <li><Tabmenu_link label="meer" onclick={toggleMenu} href="#" /></li>
@@ -29,8 +31,17 @@
     padding: 1em 0em;
     display: flex;
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     z-index: 99;
+    display: none;
+    max-height: 90px;
+    height: 90px;
+  }
+
+  @media only screen and (max-width: 960px) {
+    ul {
+      display: flex;
+    }
   }
 </style>

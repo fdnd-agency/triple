@@ -27,7 +27,7 @@
 
 <style>
   .header {
-    z-index: 5;
+    z-index: 999;
     top: 0;
     position: sticky;
     padding: 1rem 2rem;
