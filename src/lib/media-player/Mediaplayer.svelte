@@ -1,5 +1,6 @@
 <script>
   import { onMount } from "svelte";
+  import amy from "$lib/assets/amy-whine-house.png?enhanced";
   // referentie naar de audio element om muziek te kunnen afspelen of stoppen
   let audioElement;
   // Variable om bij te houden of de audio file wordt afgespeeld
@@ -54,11 +55,11 @@
         <span class="audio__line"></span>
 
         <figure class="audio__figure">
-          <img
+          <enhanced:img
             class="audio__amy"
+            src={amy}
             width="93"
             alt="foto Amy whine house"
-            src="/amy-whine-house.png"
           />
           <p class="audio__dj-text">
             <img
@@ -79,8 +80,12 @@
               class="audio__klok"
               alt="tijd icoon"
               src="/Time.svg"
-            /> 
-            <p class="audio__omschrijving">Back <span class="audio__hidden-text">To Black - Amy Winehouse</span></p>
+            />
+            <p class="audio__omschrijving">
+              Back <span class="audio__hidden-text"
+                >To Black - Amy Winehouse</span
+              >
+            </p>
           </div>
         </article>
 
@@ -177,12 +182,12 @@
             </article>
             <div class="audio__artiesten-wachtrij">
               <article>
-                <img
-                  class="audio__artiesten-foto"
-                  width="93"
-                  src="/amy-whine-house.png"
-                  alt="foto album amy winehouse"
-                />
+                <enhanced:img
+                class="audio__artiesten-foto"
+                src={amy}
+                width="93"
+                alt="foto Amy whine house"
+              />
                 <h2 class="audio__foto-header">Back to black</h2>
                 <p>Amy winhouse</p>
                 <span></span>
@@ -318,7 +323,6 @@
 
     @media screen and (min-width: 320px) {
       width: 155px;
-      
     }
   }
 
@@ -350,7 +354,6 @@
       }
     } */
 
-
   .audio__text-group {
     display: flex;
     flex-direction: row;
@@ -366,7 +369,6 @@
     gap: 0.7rem;
     align-items: center;
     justify-content: flex-end;
-    
 
     @media (min-width: 320px) and (max-width: 980px) {
       justify-content: flex-end;
@@ -411,17 +413,16 @@
   .audio__list {
     display: none;
 
-
     @media only screen and (min-width: 980px) {
-    padding-top: 1rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 2rem;
-    font-family: "BrutalType";
-    font-weight: 900;
-    align-items: center;
-    width: 100%;
+      padding-top: 1rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 2rem;
+      font-family: "BrutalType";
+      font-weight: 900;
+      align-items: center;
+      width: 100%;
     }
   }
 
