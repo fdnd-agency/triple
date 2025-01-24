@@ -1,0 +1,122 @@
+# Technische Documentatie
+
+![mediahuistecgni](https://github.com/user-attachments/assets/f65ce5cc-6d87-4462-b6d9-88a3718bf6f6)
+
+In ons project hebben we diverse complexe features en componenten ontwikkeld. Hieronder vind je meer informatie over de belangrijkste componenten.
+
+Root
+Voor ons project hebben we een consistente visuele stijl aangehouden met specifieke kleuren en font-families die door het hele project worden gebruikt.
+
+Voor de typografie maken we gebruik van het lettertype "BrutalType", dat ook werd toegepast in het originele ontwerp dat we hebben ontvangen. Om de hiërarchie in de tekst te benadrukken, hanteren we verschillende lettergewicht-opties (weights), afhankelijk van de belangrijkheid van de tekst.
+
+```css
+:root {
+  /* Setup root variables */
+  --media-sm: 600px;
+  --media-md: 960px;
+  --media-lg: 1280px;
+
+  /* font-style */
+  --h1-text-size: 2em;
+  --h2-text-size: 1.5em;
+  --h3-text-size: 1.17em;
+  --h4-text-size: 1em;
+  --p-text-size: 1em;
+
+  /* colors */
+  --primary-color: #0091ff;
+  --secondary-color: #fe0070;
+  --tertairy: #8b8b8b;
+  --grey: #8b8b8b;
+  --dark: #1e1e1e;
+  --light: #ffff;
+  --color-footer: #011564;
+  --hover: #a11753;
+  --hover-secondary: #0e76c6;
+
+  /* radius */
+  --full-radius: 100%;
+  --mid-radius: 20%;
+
+  /* font */
+  --font-family: "BrutalType";
+}
+
+```
+
+
+```css
+
+/* Font import */
+@font-face {
+  font-family: "BrutalType";
+  src: url("/fonts/BrutalType-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "BrutalType";
+  src: url("/fonts/BrutalType.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+```
+
+## CSS `max-width`
+In dit geval stellen we de maximale breedte van de tekst in op 65 tekens, wat een goede praktijk is om de tekst leesbaarder en visueel aantrekkelijker te maken.
+
+## CSS `text-wrap: pretty`
+Deze eigenschap wordt gebruikt om tekstregels op een visueel aantrekkelijke manier af te breken, vaak toegepast om alinea's leesbaarder en esthetisch aantrekkelijker te maken.
+
+Meer informatie over [text-wrap: pretty](https://caniuse.com/mdn-css_properties_text-wrap_pretty)
+
+## CSS `text-wrap: balance`
+Hiermee kunnen meerdere tekstregels zo worden afgebroken dat elke regel ongeveer even breed is. Dit wordt vaak gebruikt om koppen leesbaarder en visueel aantrekkelijker te maken.
+
+Meer informatie over [text-wrap: balance](https://caniuse.com/css-text-wrap-balance)
+
+```css
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+p,
+li,
+figcaption {
+  text-wrap: pretty;
+  max-width: 65ch;
+}
+```
+
+
+# Header / Mobile header
+
+
+
+
+
+# Weekselectie
+
+
+# Mediaplayer
+
+
+# Schedule gids
+
+
+
+
+
+
+
+
+
+
+
+
