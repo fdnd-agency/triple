@@ -97,6 +97,36 @@ figcaption {
 
 # Header / Mobile header
 
+### Desktop Header
+Voor grotere schermen wordt een traditionele header weergegeven, zoals je die op de meeste websites ziet. Deze bevat de gebruikelijke navigatie-elementen, zoals een logo en menu-opties die gemakkelijk toegankelijk zijn.
+
+### Mobile Header
+Voor kleinere schermen hebben we een speciale mobiele interface ontworpen. Hier worden de belangrijkste navigatieknoppen onderaan het scherm weergegeven voor een optimale mobiele gebruikservaring. Deze knoppen zijn:
+
+- Home
+- Ontdek
+- Radio
+- Meer
+
+> Wanneer je op de knop Meer klikt, verschijnt er een pop-upmenu met extra opties waaruit je kunt kiezen. Door nogmaals op Meer te klikken, sluit de pop-up en keer je terug naar het hoofdscherm.
+
+Voorbeeldweergaven:
+![Screenshot 2025-01-24 at 14 49 13](https://github.com/user-attachments/assets/3b77705b-7e0a-4351-ab56-e49235795aa6)
+
+![Screenshot 2025-01-24 at 14 49 23](https://github.com/user-attachments/assets/22a72d07-3b48-4083-8af2-09dbbbb2890f)
+
+![image](https://github.com/user-attachments/assets/8e8ec2ab-ed99-4b01-8b0c-d5a7cd256b47)
+
+
+Errorpagina
+Bij het bezoeken van een foutpagina wordt een duidelijke foutmelding weergegeven. De pagina toont een opvallende, grote foutcode in het rood, zoals 40x Error, zodat gebruikers direct begrijpen dat er een probleem is.
+
+Onder de foutmelding staat een korte beschrijving van het probleem en een veld waarin gebruikers extra informatie kunnen toevoegen over hoe zij bij deze error terecht zijn gekomen.
+
+Functionaliteiten:
+Tekstveld (textarea): Hier kunnen gebruikers details invullen over hun acties vóór de fout.
+Verzendknop: Na het invullen kan de gebruiker deze informatie versturen. De gegevens worden automatisch opgeslagen in onze database, zodat het technische team de oorzaak kan analyseren en oplossen.
+Deze errorpagina is ontworpen om zowel gebruikers duidelijkheid te bieden als waardevolle feedback voor ons team te verzamelen.
 
 
 
@@ -106,7 +136,7 @@ figcaption {
 
 # Mediaplayer
 
-Voor de mediaplayer hebben we allerlei verschillende componenten die in deze mediaplayer wordt ingeladen, deze wordt uiteindelijk allemaal samen in 1 bestand samen gevoegd:
+Voor de mediaplayer hebben we allerlei verschillende componenten die in deze mediaplayer wordt ingeladen, deze wordt uiteindelijk allemaal samen in 1 bestand samen gevoegd: 
 
 ```svelte
 <article class="radioplayer audio">
