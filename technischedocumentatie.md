@@ -106,6 +106,44 @@ figcaption {
 
 # Mediaplayer
 
+Voor de mediaplayer hebben we allerlei verschillende componenten die in deze mediaplayer wordt ingeladen, deze wordt uiteindelijk allemaal samen in 1 bestand samen gevoegd:
+
+```svelte
+<article class="radioplayer audio">
+  <Radiotab />
+  <Musicimage />
+  <ul class="audio__group">
+    <Casting />
+    <Kijklive />
+    <PlayButton />
+    <Livechat />
+  </ul>
+  <ul class="audio__progressbar">
+    <Fullprogressbar />
+  </ul>
+  <ul class="audio__volume">
+    <Volumecontrole />
+  </ul>
+  <ul class="audio__spotify">
+    <Spotifylabel />
+  </ul>
+  <section class="audio__lijstweergave">
+    <h2>Eerder op radio Veronica</h2>
+    <Weergavelijst />
+  </section>
+</article>
+```
+> Al deze bestanden zullen in `$lib/molecules/radioplayerMolecules` gaan omdat het gaat om best veel componenten dus om alles goed te sorteren hebben we dit in een aparte folder gedaan.
+
+Als deze mediaplayer kleiner wordt zal deze horizontaal komen op het scherm. Hier zal je dan een kleinere overview hebben van de mediaplayer waarin je de logo, naam, song en de belangrijke knoppen zoals play en cast.
+
+
+
+
+
+
+
+
 
 # Schedule gids
 
