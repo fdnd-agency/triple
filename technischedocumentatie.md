@@ -109,6 +109,121 @@ figcaption {
 
 # Schedule gids
 
+### Overzicht
+In deze commit heb ik de popover-API bij het klikken op een radioprogramma geïmplementeerd. Daarnaast heb ik de verbinding gelegd tussen de weekselectie en de radiogids. Verschillende tests zijn uitgevoerd om ervoor te zorgen dat de functionaliteit correct werkt.
+
+#### Hoe werkt het?
+1. Om markdown-rendering in de popoverbeschrijving mogelijk te maken, heb ik markdown-it geïnstalleerd:
+
+```js
+import MarkdownIt from "markdown-it";
+const md = new MarkdownIt();
+```
+
+2. De functie is verbeterd om te werken met zowel cover- als thumbnail-afbeeldingen en bevat een fallback-optie:
+
+```js
+return {
+  cover: firstUser ? `/${firstUser}` : thumbnail ? `/${thumbnail}` : "",
+  thumbnail: thumbnail ? `/${thumbnail}` : "",
+};
+```
+
+De ProgramCard is aangepast om de nieuwe cover- en thumbnail-afbeeldingen te ondersteunen:
+
+```svelte
+{#each stationShows as show, i}
+  <ProgramCard
+    showLogo={stationShows[0].mh_shows_id?.show?.radiostation?.logo
+      ?.id}
+    programName={show.mh_shows_id?.show?.name || "Unknown Program"}
+    time={getShowTime(show)}
+    jdImgSrc={getImageSource(show).cover}
+    thumbnailImgSrc={getImageSource(show).thumbnail}
+    programLink={show.id}
+    description={md.render(
+      show.mh_shows_id?.show?.body || "Unknown description",
+    )}
+  />
+{/each}
+
+```
+
+3. Nieuwe export-variabelen toegevoegd voor afbeeldingen in `ProgramCard.svelte`:
+```js
+export let jdImgSrc = "";
+export let thumbnailImgSrc = "";
+```
+4. Een unieke target ingesteld voor elke popover met `popovertarget="popover-{programLink}"`:
+```svelte
+ <button
+  class="card {status} brutalist-btn brutalist"
+  popovertarget="popover-{programLink}"
+  style="--start:{start}; --end:{end}; --vt:{programLink}"
+>
+
+```
+
+5. Een dynamische popover gemaakt voor elke kaart, die data preloadt `(data-sveltekit-preload-data="hover")` bij hover en sluit met Escape of een sluitknop:
+
+```svelte
+<div
+  data-sveltekit-preload-data="hover"
+  class="popover"
+  popover
+  id="popover-{programLink}"
+  style="--vt:{programLink}"
+>
+  <div class="popover-card">
+    <picture class="image">
+      <source
+        srcset={thumbnailImgSrc
+          ? `https://fdnd-agency.directus.app/assets/${thumbnailImgSrc}?format=webp`
+          : "/path/to/default/image.jpg"}
+        alt={programName}
+      />
+      <source
+        srcset={thumbnailImgSrc
+          ? `https://fdnd-agency.directus.app/assets/${thumbnailImgSrc}?format=jpg`
+          : "/path/to/default/image.jpg"}
+        alt={programName}
+      />
+      <img
+        loading="lazy"
+        src={thumbnailImgSrc
+          ? `https://fdnd-agency.directus.app/assets/${thumbnailImgSrc}?format=jpeg`
+          : "/path/to/default/image.jpg"}
+        alt={programName}
+      />
+    </picture>
+
+    <input
+      type="button"
+      value="Sluiten"
+      class="close"
+      popovertarget="popover-{programLink}"
+    />
+
+
+```
+
+6. De popover `sticky` gemaakt om te voorkomen dat deze uit beeld scrolt:
+```css
+  [popover] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    pointer-events: all;
+  }
+
+```
+
+
+
 
 
 
