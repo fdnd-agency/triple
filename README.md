@@ -3,7 +3,7 @@
 **Studentenwerk Sprint 5: Fix The Flow** 
 
 |  |  |  | 
-
+| :--------------- | :--------------- | :--------------- |
 | Julia	| https://github.com/julia-stevens/fix-the-flow-interactive-website 	| https://julia-stevens.github.io/fix-the-flow-interactive-website/ 
 | Viresh	| https://github.com/vsheo/fix-the-flow-interactive-website 	| https://vsheo.github.io/fix-the-flow-interactive-website/ 
 | Aria	| https://github.com/poormoa00/fix-the-flow-interactive-website	| https://poormoa00.github.io/fix-the-flow-interactive-website/ 
