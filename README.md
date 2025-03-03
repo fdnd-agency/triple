@@ -9,6 +9,13 @@
 | Aria	| [repository](https://github.com/poormoa00/fix-the-flow-interactive-website)	| [live site](https://poormoa00.github.io/fix-the-flow-interactive-website/) 
 | Sebastiaan	| [repository](https://github.com/Sebastiaan-hva/fix-the-flow-interactive-website)	| [live site](https://sebastiaan-hva.github.io/fix-the-flow-interactive-website/) 
 
+**API Endpoints**  
+* Shows: https://fdnd-agency.directus.app/items/mh_shows 
+* Show: https://fdnd-agency.directus.app/items/mh_show
+* Users: https://fdnd-agency.directus.app/items/mh_users
+* Radiostations: https://fdnd-agency.directus.app/items/mh_radiostations
+* Chats: https://fdnd-agency.directus.app/items/mh_chats
+
 # Mediahuis
 
 We hebben een radiogids gebouwd voor Mediahuis. Op deze gids kun je een dag selecteren, waarna je op de gekozen dag alle tijdstippen van de radioshows en de radio-dj's die draaien tijdens de show kunt bekijken.
