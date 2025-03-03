@@ -1,5 +1,8 @@
 <img width="1676" alt="Schermafbeelding 2025-01-22 om 15 45 43" src="https://github.com/user-attachments/assets/350b10b5-847e-4a5b-aacf-efda79a12cdf" />
 
+**Team Sprint 8**  
+Dylan, Clarice, Collin, Kyan, Kate, Arman
+
 **Studentenwerk Sprint 5: Fix The Flow** 
 
 |  |  |  | 
