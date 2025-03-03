@@ -4,10 +4,10 @@
 
 |  |  |  | 
 | :--------------- | :--------------- | :--------------- |
-| Julia	| https://github.com/julia-stevens/fix-the-flow-interactive-website 	| https://julia-stevens.github.io/fix-the-flow-interactive-website/ 
-| Viresh	| https://github.com/vsheo/fix-the-flow-interactive-website 	| https://vsheo.github.io/fix-the-flow-interactive-website/ 
-| Aria	| https://github.com/poormoa00/fix-the-flow-interactive-website	| https://poormoa00.github.io/fix-the-flow-interactive-website/ 
-| Sebastiaan	| https://github.com/Sebastiaan-hva/fix-the-flow-interactive-website	| https://sebastiaan-hva.github.io/fix-the-flow-interactive-website/ 
+| Julia	| [repository](https://github.com/julia-stevens/fix-the-flow-interactive-website) 	| [live site](https://julia-stevens.github.io/fix-the-flow-interactive-website/) 
+| Viresh	| [repository](https://github.com/vsheo/fix-the-flow-interactive-website) 	| [live site](https://vsheo.github.io/fix-the-flow-interactive-website/) 
+| Aria	| [repository](https://github.com/poormoa00/fix-the-flow-interactive-website)	| [live site](https://poormoa00.github.io/fix-the-flow-interactive-website/) 
+| Sebastiaan	| [repository](https://github.com/Sebastiaan-hva/fix-the-flow-interactive-website)	| [live site](https://sebastiaan-hva.github.io/fix-the-flow-interactive-website/) 
 
 # Mediahuis
 
