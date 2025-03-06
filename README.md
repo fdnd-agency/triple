@@ -1,24 +1,5 @@
 <img width="1676" alt="Schermafbeelding 2025-01-22 om 15 45 43" src="https://github.com/user-attachments/assets/350b10b5-847e-4a5b-aacf-efda79a12cdf" />
 
-**Team Sprint 8**  
-Dylan, Clarice, Collin, Kyan, Kate, Arman
-
-**Studentenwerk Sprint 5: Fix The Flow** 
-
-|  |  |  | 
-| :--------------- | :--------------- | :--------------- |
-| Julia	| [repository](https://github.com/julia-stevens/fix-the-flow-interactive-website) 	| [live site](https://julia-stevens.github.io/fix-the-flow-interactive-website/) 
-| Viresh	| [repository](https://github.com/vsheo/fix-the-flow-interactive-website) 	| [live site](https://vsheo.github.io/fix-the-flow-interactive-website/) 
-| Aria	| [repository](https://github.com/poormoa00/fix-the-flow-interactive-website)	| [live site](https://poormoa00.github.io/fix-the-flow-interactive-website/) 
-| Sebastiaan	| [repository](https://github.com/Sebastiaan-hva/fix-the-flow-interactive-website)	| [live site](https://sebastiaan-hva.github.io/fix-the-flow-interactive-website/) 
-
-**API Endpoints**  
-* Shows: https://fdnd-agency.directus.app/items/mh_shows 
-* Show: https://fdnd-agency.directus.app/items/mh_show
-* Users: https://fdnd-agency.directus.app/items/mh_users
-* Radiostations: https://fdnd-agency.directus.app/items/mh_radiostations
-* Chats: https://fdnd-agency.directus.app/items/mh_chats
-
 # Mediahuis
 
 We hebben een radiogids gebouwd voor Mediahuis. Op deze gids kun je een dag selecteren, waarna je op de gekozen dag alle tijdstippen van de radioshows en de radio-dj's die draaien tijdens de show kunt bekijken.
