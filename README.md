@@ -2,7 +2,7 @@
 
 Triple is een Full-service digital agency gevestigd in Alkmaar.
 
-[Meer informatie over Triple](/files/Triple-about.pdf)
+[Meer informatie over Triple](/files/Triple|Hypersolid-FDND.pdf)
 
 # Mediahuis
 
@@ -26,7 +26,7 @@ Jij en je team zijn de ontwikkelaars van RadioGuide, een gloednieuwe radiogids-a
 
 #### Een overzicht van wat er die dag uitgezonden wordt op een van de radio zenders van Mediahuis
 
-- Veronica, SLAM!, 100%NL, Sublime en Sunlight
+- Veronica, SLAM! en 100%NL
     
 #### Features
 
